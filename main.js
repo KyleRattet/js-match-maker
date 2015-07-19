@@ -1,17 +1,26 @@
 // console.log("sanity check!");
 
-// Ask (prompt) the user for the total number of students learning JavaScript
-// For each student, ask the user for their name, phone number, and city. Create an object for each person. Add each object to an array. BONUS: add validation.
-// Repeat steps 1 and 2 for mentors. Create a new array of objects. You should now have two arrays - one for students, the other for mentors.
-// Print (alert) the total number of students, the number of mentors, and each person nicely formatted like so:
-
-//students
-
+//variable to ask for number of students
 var totalNumberStudents = prompt("How many total students are learning JavaScript");
+//students array
 var students = createPeople(totalNumberStudents);
+//variable to ask for number of mentors
 var totalNumberMentors = prompt("How many total mentors are teaching JavaScript");
+//mentor array
 var mentors = createPeople(totalNumberMentors);
 
+//alerts to display number of students/mentors(using .length
+//method on the arrays to get the number)
+alert("Total number of students: " + students.length);
+alert("Total number of mentors: " + mentors.length);
+
+//fuctions to print 4
+//info alerts outlining each person
+infoAlert(students);
+infoAlert(mentors);
+
+//funtion to ask for personal information, universally applicable
+//to students or ment
 function getInfo () {
   var person = {};
   person.name = prompt("What is the name?");
@@ -29,5 +38,10 @@ function createPeople (totalNumberStudents) {
   return students;
 }
 
-console.log(students);
-console.log(mentors);
+function infoAlert (array) {
+  for (var i = 0; i < array.length; i++) {
+     string = ("Name: " + array[i].name+"\n"+
+               "Phone Number: " + array[i].phone+"\n"+
+               "City: "+array[i].city+"\n")
+  } return alert(string);
+}
