@@ -39,9 +39,11 @@ function createPeople (totalNumberStudents) {
 }
 
 function infoAlert (array) {
+  var totalString = "";
   for (var i = 0; i < array.length; i++) {
      string = ("Name: " + array[i].name+"\n"+
                "Phone Number: " + array[i].phone+"\n"+
-               "City: "+array[i].city+"\n")
-  } return alert(string);
+               "City: "+array[i].city+"\n");
+    totalString += alert(string);
+  } return totalString;
 }
