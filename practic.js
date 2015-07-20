@@ -39,7 +39,7 @@ function infoAlert (array) {
     string = ("Name: "+ array[i].name+"\n"+
               "Phone Number: "+array[i].phone+"\n"+
               "City: "+array[i].city);
-      totalString += alert(string);
+              alert(string);
   } return totalString;
 }
 
