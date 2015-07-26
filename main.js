@@ -13,7 +13,6 @@ var mentors = createPeople(totalNumberMentors);
 //method on the arrays to get the number)
 alert("Total number of students: " + students.length);
 alert("Total number of mentors: " + mentors.length);
-
 //fuctions to print 4
 //info alerts outlining each person
 infoAlert(students);
@@ -47,3 +46,5 @@ function infoAlert (array) {
     totalString += alert(string);
   } return totalString;
 }
+
+
