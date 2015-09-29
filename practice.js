@@ -1,45 +1,39 @@
-// alert("test");
-
-//prompt asking for total number of students
 var numberOfStudents = prompt("How many students?");
-var students = addPersonToArray(numberOfStudents);
 
-//promt total number of mentors
-var numberOfMentors = prompt("How many mentors?");
-var mentors = addPersonToArray(numberOfMentors);
+var students = createPerson(numberOfStudents);
 
-alert("Total number of students: " + numberOfStudents);
-alert("Total number of mentors: " + numberOfMentors);
-//create an array of objects for each student
 infoSummary(students);
-infoSummary(mentors);
 
-//function to get information input(information) >>> output(obect)
+//get infomation function, create into an object
 function getInfo () {
-  var person = {};
-  person.name = prompt("Name?");
-  person.phone = prompt("Phone?");
+  var person= {};
+  person.name = prompt("name?");
+  person.phone = prompt("phone?");
   person.city = prompt("city?");
   return person;
 }
 
-//function to add getInfo to student array
-function addPersonToArray (numberOfStudents) {
-  var studentArray=[];
-  for (var i = 0; i < numberOfStudents; i++) {
-    studentArray.push(getInfo());
+//create object for each person
+function createPerson (numberOfPersons) {
+  var personsArray= [];
+  for (var i = 0; i < numberOfPersons; i++) {
+    personsArray.push(getInfo());
   }
-  return studentArray;
+  return personsArray;
 }
 
-//function to print out student info
+// createPerson(numberOfStudents);
+//function to print out personal info.
+
 function infoSummary (array) {
-  var totalString = "";
+  var total = "";
   for (var i = 0; i < array.length; i++) {
-    string = ("Name: " + array[i].name+"\n"+
-             "Phone: " + array[i].phone+"\n"+
-             "City: " + array[i].city);
-    totalString += alert(string);
-  } return totalString
+    string = "Name: "+array[i].name+"\n"+
+             "Phone: "+array[i].phone+"\n"+
+             "City: "+array[i].city
+    total += alert(string);
+  }
+  return total;
 }
+
 
