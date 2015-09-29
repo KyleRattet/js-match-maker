@@ -38,6 +38,8 @@
 
       <button ng-click="addStudent()" type="submit" class="btn btn-success">Submit Student</button>
     </form>
+
+
     <hr>
 
 <!-- render student form -->
@@ -51,13 +53,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="student in students">
+        <tr ng-repeat="student in students | filter: search">
           <td>{{ student.name }}</td>
           <td>{{ student.phoneNumber }}</td>
           <td>{{ student.location }}</td>
         </tr>
       </tbody>
   </table>
+
+  <hr>
 
 
   </div>
@@ -96,7 +100,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="mentor in mentors">
+        <tr ng-repeat="mentor in mentors | filter: search">
           <td>{{ mentor.name }}</td>
           <td>{{ mentor.phoneNumber }}</td>
           <td>{{ mentor.location }}</td>
@@ -104,11 +108,14 @@
       </tbody>
   </table>
 
+  <hr>
+
 
   </div>
 
-
-
+  <div class="row text-center">
+  <span><strong>Search: </strong><input ng-model="search"/></span>
+  </div>
 
 
   </div>
